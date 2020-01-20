@@ -9,12 +9,19 @@ class App extends Component {
     todoTask: []
   }
 
+  addTodoTask = (task) => {
+    task.id = Math.random();
+    let tasks = [...this.state.todoTask, task];
+    this.setState({
+      todoTask: tasks 
+    })
+  }
 
   render() {
     return (
       <div>
         <Header />
-        <AddTodo  />
+        <AddTodo addTodoTask={this.addTodoTask}  />
         <TodoList todoTask={this.state.todoTask}/>
 
       </div>

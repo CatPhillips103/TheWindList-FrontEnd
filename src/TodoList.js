@@ -5,15 +5,15 @@ import React from 'react'
 
 const TodoList = ({ todoTask }) => {
     const list = todoTask.length ? (
-        todoTask.map(task => {
-        return <div className="container">
+        todoTask.map(todo => {
+        return <div className="container" key={todo.id}>
             <div className="row">
                 <div className="col-12 cp-3 text-center tasklist">
-                    <div className="card" key={task.id}>
-                        {task}
+                    <div className="card" key={todo.id}>
+                        {todo.content}
                         <div>
-                            <button class="taskbuttons"><i class="far fa-check-circle"></i></button>
-                            <button class="taskbuttons"><i class="far fa-trash-alt"></i></button>
+                            <button className="taskbuttons"><i className="far fa-check-circle"></i></button>
+                            <button className="taskbuttons"><i className="far fa-trash-alt"></i></button>
                         </div>
                     </div>
                 </div>
