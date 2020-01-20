@@ -1,7 +1,10 @@
 import React from 'react'
 
+
+
+
 const TodoList = ({ todoTask }) => {
-    const list = todoTask.length ?(
+    const list = todoTask.length ? (
         todoTask.map(task => {
         return <div className="container">
             <div className="row">
