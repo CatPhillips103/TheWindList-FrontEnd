@@ -42,3 +42,34 @@ background-color: Transparent;
   font-size: 30px;
   color: 	rgb(128,128,128);
 }
+
+
+.card {
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: rgb(247, 247, 247);
+  background-color: black;
+  opacity: 0.6;
+}
+
+
+.taskbuttons  {
+background-color: Transparent;
+border-radius: 50%;
+outline: none;
+border-style: none;
+margin: auto;
+font-size: 30px;
+}
+
+.taskbuttons i {
+ color: white;
+}
+
+.tasklist {
+padding-bottom: 20px;
+padding-top: 20px;
+
+
+}
