@@ -16,3 +16,28 @@ body {
   color: rgb(255, 255, 255);
 }
   
+
+.taskform {
+  text-align: center;
+  font-size: 30px;
+  opacity: 0.9;
+}
+
+.tasks {
+border-radius: 25px;
+}
+.addButton {
+border-radius: 25px;
+outline: none;
+border: none;
+height: 50px;
+width: 50px;
+margin-left: 10px;
+background-color: Transparent;
+
+}
+
+.fa-plus-circle {
+  font-size: 30px;
+  color: 	rgb(128,128,128);
+}
