@@ -15,7 +15,7 @@ class App extends Component {
       <div>
         <Header />
         <AddTodo  />
-        <TodoList />
+        <TodoList todoTask={this.state.todoTask}/>
 
       </div>
     )
