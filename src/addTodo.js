@@ -5,8 +5,10 @@ class AddTodo extends Component {
     // value entered in the form will change the state of the empty string content.
 
     state = {
-        content: ' '
+        content: null,
     }
+
+    
 
     appChange = (e) => {
         this.setState({
@@ -14,9 +16,7 @@ class AddTodo extends Component {
         });
     }
 
-    // accessing the props which is a card that displays tasks and completed / deleted buttons
-
-    taskSubmit = (e) => {
+    clickButton = (e) => {
         e.preventDefault();
         this.props.addTodoTask(this.state);
     }
@@ -24,9 +24,9 @@ class AddTodo extends Component {
     render() {
         return (
             <div className="container my-4 taskform-container">
-                <form onSubmit={this.taskSubmit} className="col-sm-12 taskform">
+                <form className="col-sm-12 taskform">
                     <input type="text" className="col-sm-8 text-center tasks" placeholder="travel with ease..." onChange={this.appChange} />
-                    <button className="addButton"><i className="fas fa-plus-circle"></i></button>
+                    <button onClick={this.clickButton} className="addButton"><i className="fas fa-plus-circle"></i></button>
                 </form>
             </div>
         )

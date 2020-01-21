@@ -30,7 +30,6 @@ class App extends Component {
     this.setState({
       taskCount: tobeCompleted
     });
-
   }
 
 
@@ -42,7 +41,7 @@ class App extends Component {
           <h2 className="counter">{this.state.taskCount}</h2>
         </div>
         <AddTodo addTodoTask={this.addTodoTask} />
-        <TodoList todoTask={this.state.todoTask} />
+        <TodoList todoTask={this.state.todoTask}/>
       </div>
     )
   }
