@@ -9,11 +9,12 @@ class App extends Component {
   // plus button will update the state to have content inside
 
   state = {
-    todoTask: []
+    todoTask: [],
+    taskCount: 0
   }
 
 
-  // addTodoTask takes in a task as a function value which a new variable is assign using
+  // addTodoTask takes in a task as a function value which a new variable is assigned using
   // an array which has accesses the current state of the todoTask, whilst adding new task onto the array
 
 
@@ -24,15 +25,24 @@ class App extends Component {
     this.setState({
       todoTask: tasks
     });
+
+    let tobeCompleted = this.state.taskCount + 1;
+    this.setState({
+      taskCount: tobeCompleted
+    });
+
   }
+
 
   render() {
     return (
       <div>
-        <Header />
+        <Header taskCount={this.taskCount} />
+        <div className="container">
+          <h2 className="counter">{this.state.taskCount}</h2>
+        </div>
         <AddTodo addTodoTask={this.addTodoTask} />
         <TodoList todoTask={this.state.todoTask} />
-
       </div>
     )
   }

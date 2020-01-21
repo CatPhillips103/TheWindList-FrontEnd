@@ -16,6 +16,11 @@ body {
   color: rgb(255, 255, 255);
 }
   
+.counter {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
 
 .taskform {
   text-align: center;
@@ -70,6 +75,4 @@ font-size: 30px;
 .tasklist {
 padding-bottom: 20px;
 padding-top: 20px;
-
-
 }
