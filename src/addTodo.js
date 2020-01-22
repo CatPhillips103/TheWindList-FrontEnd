@@ -5,10 +5,8 @@ class AddTodo extends Component {
     // value entered in the form will change the state of the empty string content.
 
     state = {
-        content: null,
+        content: ' ',
     }
-
-    
 
     appChange = (e) => {
         this.setState({

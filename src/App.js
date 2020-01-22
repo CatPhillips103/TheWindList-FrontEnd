@@ -1,47 +1,45 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './Header';
+import Header from './Header'
+import TaskCounter from './TaskCounter'
 import AddTodo from './addTodo'
 import TodoList from './TodoList'
 
 class App extends Component {
-  // empty array props: todoTask state will change when a new task is added using either enter or
-  // plus button will update the state to have content inside
+  
 
   state = {
-    todoTask: [],
+    taskItems: [
+      {content: 'buy travel insurance', completed: false},
+      {content: 'don\'t forget passport!', completed: false}
+    ],
     taskCount: 0
   }
 
 
-  // addTodoTask takes in a task as a function value which a new variable is assigned using
-  // an array which has accesses the current state of the todoTask, whilst adding new task onto the array
-
-
-  addTodoTask = (task) => {
-    // each task has unique id for keys within React
+  addTask = (task) => {
     task.id = Math.random();
-    let tasks = [...this.state.todoTask, task];
+    let tasks = [...this.state.taskItems, task];
     this.setState({
-      todoTask: tasks
+      taskItems: tasks
     });
 
-    let tobeCompleted = this.state.taskCount + 1;
+    let toBeCompletedCount = this.state.taskCount + 1;
     this.setState({
-      taskCount: tobeCompleted
+      taskCount: toBeCompletedCount
     });
+
+
   }
 
 
   render() {
     return (
       <div>
-        <Header taskCount={this.taskCount} />
-        <div className="container">
-          <h2 className="counter">{this.state.taskCount}</h2>
-        </div>
-        <AddTodo addTodoTask={this.addTodoTask} />
-        <TodoList todoTask={this.state.todoTask}/>
+        <Header />
+        <TaskCounter count={this.state.taskItems.length} />
+        <AddTodo addTodoTask={this.addTask} />
+        <TodoList taskItems={this.state.taskItems} />
       </div>
     )
   }
