@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 
 class Task extends Component {
 
-    clickDelete = () => {
+    clickDelete = (e) => {
+       e.preventDefault();
        this.props.deleteTaskF(this.props.listItem.id);
     }
 
