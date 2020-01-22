@@ -7,7 +7,7 @@ class TodoList extends Component {
             <div>
                 {
                     this.props.taskItems.map(
-                        (task) => <Task listItem={task} />
+                        (task) => <Task listItem={task} deleteTaskF={this.props.deleteTaskF} />
                     )
                 }
             </div>

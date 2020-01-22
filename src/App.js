@@ -31,10 +31,17 @@ class App extends Component {
     this.setState({
       taskCount: countValue
     });
-
-    
   }
 
+  deleteTask = (taskId) => {
+    const tasks  =  this.state.taskItems;
+
+    const updatedContent = tasks.filter(task => task.id !== taskId);
+
+    this.setState({
+      taskItems: updatedContent
+    });
+  }
   
 
 
@@ -44,7 +51,7 @@ class App extends Component {
         <Header />
         <TaskCounter count={this.state.taskItems.length} />
         <AddTodo addTodoTask={this.addTask} />
-        <TodoList taskItems={this.state.taskItems}  />
+        <TodoList taskItems={this.state.taskItems} deleteTaskF={this.deleteTask} />
       </div>
     )
   }
