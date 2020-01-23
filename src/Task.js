@@ -7,6 +7,10 @@ class Task extends Component {
        this.props.deleteTaskF(this.props.listItem.id);
     }
 
+    finishedTasks = () => {
+        this.props.completedTaskF(this.props.listItem.id);
+     }
+
     render() {
         return (
             <div className="container">
@@ -15,7 +19,7 @@ class Task extends Component {
                         <div className="card">
                             {this.props.listItem.content}
                             <div>
-                                <button className="taskbuttons"><i className="far fa-check-circle"></i></button>
+                                <button className="taskbuttons"onClick={this.finishedTasks} ><i className="far fa-check-circle"></i></button>
                                 <button className="taskbuttons" onClick={this.clickDelete}><i className="far fa-trash-alt"></i></button>
                             </div>
                         </div>

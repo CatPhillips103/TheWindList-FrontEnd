@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 class CompletedTasks extends Component {
+
+    
     render() {
         return (
             <div className="container">
@@ -9,6 +11,7 @@ class CompletedTasks extends Component {
                         <h1>Completed Tasks</h1>
                         <div className="card">
                             <p>print plane tickets</p>
+                            <p>set alarm for 3am</p>
                         </div>
                     </div>
                 </div>

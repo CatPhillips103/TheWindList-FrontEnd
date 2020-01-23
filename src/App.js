@@ -14,8 +14,8 @@ class App extends Component {
 
   state = {
     taskItems: [
-      { content: 'buy travel insurance', completed: false, id: uuidv4()},
-      { content: 'train to gatwick @ 5am', completed: true, id: uuidv4()},
+      { content: 'buy travel insurance', completed: false, id: uuidv4() },
+      { content: 'train to gatwick @ 5am', completed: true, id: uuidv4() },
       { content: 'don\'t forget passport!', completed: false, id: uuidv4() }
 
     ]
@@ -23,7 +23,7 @@ class App extends Component {
 
 
   addTask = (taskContent) => {
-    
+
     const taskAdded = {
       content: taskContent,
       completed: false,
@@ -41,7 +41,7 @@ class App extends Component {
   }
 
   deleteTask = (taskId) => {
-    const tasks  =  this.state.taskItems;
+    const tasks = this.state.taskItems;
 
     const updatedContent = tasks.filter(task => task.id !== taskId);
 
@@ -49,7 +49,11 @@ class App extends Component {
       taskItems: updatedContent
     });
   }
-  
+
+  finishedTask = (taskId) => {
+     alert(`you want to delete ${taskId}`)
+  }
+
 
 
   render() {
@@ -58,9 +62,11 @@ class App extends Component {
         <Header />
         <TaskCounter count={this.state.taskItems.length} />
         <AddTodo addTodo={this.addTask} />
-        <TodoList taskItems={this.state.taskItems} deleteTaskF={this.deleteTask} />
+        <TodoList taskItems={this.state.taskItems}
+          deleteTaskF={this.deleteTask}
+          completedTaskF={this.finishedTask} />
         <CompletedTasks />
-        
+
       </div>
     )
   }

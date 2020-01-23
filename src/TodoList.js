@@ -6,13 +6,12 @@ class TodoList extends Component {
         return (
             <div>
                 {
-                    this.props.taskItems.map(
-                        (task) => <Task listItem={task} deleteTaskF={this.props.deleteTaskF} key={task.id} />
-                    )
-                }
-
-
-                
+                    this.props.taskItems.map((task) =>
+                        <Task listItem={task}
+                            deleteTaskF={this.props.deleteTaskF}
+                            completedTaskF={this.props.completedTaskF}
+                            key={task.id} />
+                    )}
             </div>
 
         )
