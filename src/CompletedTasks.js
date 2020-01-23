@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class CompletedTasks extends Component {
 
-    
+
     render() {
         return (
             <div className="container">
@@ -10,8 +10,9 @@ class CompletedTasks extends Component {
                     <div className="col-12 cp-3 text-center completedtasks">
                         <h1>Completed Tasks</h1>
                         <div className="card">
+                        
                             <p>print plane tickets</p>
-                            <p>set alarm for 3am</p>
+                         
                         </div>
                     </div>
                 </div>

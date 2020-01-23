@@ -15,8 +15,8 @@ class App extends Component {
   state = {
     taskItems: [
       { content: 'buy travel insurance', completed: false, id: uuidv4() },
-      { content: 'train to gatwick @ 5am', completed: true, id: uuidv4() },
-      { content: 'don\'t forget passport!', completed: false, id: uuidv4() }
+      { content: 'train to gatwick @ 5am', completed: false, id: uuidv4() },
+      { content: 'don\'t forget passport!', completed: true, id: uuidv4() }
 
     ]
   }
@@ -51,10 +51,23 @@ class App extends Component {
   }
 
   finishedTask = (taskId) => {
-     alert(`you want to delete ${taskId}`)
+
+    const completed = this.state.taskItems;
+
+    for (let t = 0; t < completed.length; t++) {
+      const task = completed[t];
+      console.log(task.content)
+
+      if (task.id === taskId) {
+        task.completed = true;
+        break;
+      }
+    }
+
+    this.setState({
+      taskItems: completed
+    })
   }
-
-
 
   render() {
     return (
@@ -65,7 +78,7 @@ class App extends Component {
         <TodoList taskItems={this.state.taskItems}
           deleteTaskF={this.deleteTask}
           completedTaskF={this.finishedTask} />
-        <CompletedTasks />
+        <CompletedTasks  />
 
       </div>
     )

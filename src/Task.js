@@ -7,7 +7,7 @@ class Task extends Component {
        this.props.deleteTaskF(this.props.listItem.id);
     }
 
-    finishedTasks = () => {
+    finishedTasks = (e) => {
         this.props.completedTaskF(this.props.listItem.id);
      }
 
