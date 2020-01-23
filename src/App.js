@@ -4,6 +4,7 @@ import Header from './Header'
 import TaskCounter from './TaskCounter'
 import AddTodo from './addTodo'
 import TodoList from './TodoList'
+import CompletedTasks from './CompletedTasks'
 import uuidv4 from 'uuid/v4';
 
 
@@ -17,8 +18,7 @@ class App extends Component {
       { content: 'train to gatwick @ 5am', completed: true, id: uuidv4()},
       { content: 'don\'t forget passport!', completed: false, id: uuidv4() }
 
-    ],
-    taskCount: 0
+    ]
   }
 
 
@@ -36,13 +36,9 @@ class App extends Component {
 
     this.setState({
       taskItems: appendTasks
-    })
-
+    });
 
   }
-
-
-
 
   deleteTask = (taskId) => {
     const tasks  =  this.state.taskItems;
@@ -63,6 +59,7 @@ class App extends Component {
         <TaskCounter count={this.state.taskItems.length} />
         <AddTodo addTodo={this.addTask} />
         <TodoList taskItems={this.state.taskItems} deleteTaskF={this.deleteTask} />
+        <CompletedTasks />
         
       </div>
     )

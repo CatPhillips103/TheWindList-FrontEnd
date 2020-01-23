@@ -22,6 +22,7 @@ class Task extends Component {
                     </div>
                 </div>
             </div>
+
         )
     }
 }
