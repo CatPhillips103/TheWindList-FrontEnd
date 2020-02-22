@@ -4,9 +4,7 @@ import Header from './Header'
 import TaskCounter from './TaskCounter'
 import AddTodo from './addTodo'
 import TodoList from './TodoList'
-import CompletedTasks from './CompletedTasks'
 import uuidv4 from 'uuid/v4';
-
 
 
 class App extends Component {
@@ -18,7 +16,9 @@ class App extends Component {
       { content: 'train to gatwick @ 5am', completed: false, id: uuidv4() },
       { content: 'don\'t forget passport!', completed: true, id: uuidv4() }
 
-    ]
+    ],
+
+
   }
 
 
@@ -41,6 +41,7 @@ class App extends Component {
   }
 
   deleteTask = (taskId) => {
+    
     const tasks = this.state.taskItems;
 
     const updatedContent = tasks.filter(task => task.id !== taskId);
@@ -51,12 +52,11 @@ class App extends Component {
   }
 
   finishedTask = (taskId) => {
-
     const completed = this.state.taskItems;
 
     for (let t = 0; t < completed.length; t++) {
       const task = completed[t];
-      console.log(task.content)
+
 
       if (task.id === taskId) {
         task.completed = true;
@@ -66,7 +66,8 @@ class App extends Component {
 
     this.setState({
       taskItems: completed
-    })
+    });
+
   }
 
   render() {
@@ -78,7 +79,6 @@ class App extends Component {
         <TodoList taskItems={this.state.taskItems}
           deleteTaskF={this.deleteTask}
           completedTaskF={this.finishedTask} />
-        <CompletedTasks  />
 
       </div>
     )

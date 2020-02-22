@@ -8,10 +8,15 @@ class Task extends Component {
     }
 
     finishedTasks = (e) => {
-        this.props.completedTaskF(this.props.listItem.id);
+     this.props.completedTaskF(this.props.listItem.id);
+      e.target.style.color = 'red'
+
      }
 
     render() {
+
+        
+
         return (
             <div className="container">
                 <div className="row">
@@ -19,7 +24,7 @@ class Task extends Component {
                         <div className="card">
                             {this.props.listItem.content}
                             <div>
-                                <button className="taskbuttons"onClick={this.finishedTasks} ><i className="far fa-check-circle"></i></button>
+                                <button className="taskbuttons"onClick={this.finishedTasks}><i className="far fa-check-circle"></i></button>
                                 <button className="taskbuttons" onClick={this.clickDelete}><i className="far fa-trash-alt"></i></button>
                             </div>
                         </div>
