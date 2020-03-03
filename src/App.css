@@ -40,7 +40,6 @@ height: 50px;
 width: 50px;
 margin-left: 10px;
 background-color: Transparent;
-
 }
 
 .fa-plus-circle {
@@ -80,5 +79,5 @@ padding-top: 20px;
 .completedtasks {
   padding-bottom: 20px;
   padding-top: 20px;
-  }
+}
 

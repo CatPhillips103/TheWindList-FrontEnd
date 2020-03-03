@@ -13,8 +13,6 @@ class CompletedTasks extends Component {
                     <div className="col-12 cp-3 text-center completedtasks">
                         <h1>Completed Tasks</h1>
                         <div className="card">
-                            
-
                         </div>
                     </div>
                 </div>

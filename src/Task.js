@@ -9,14 +9,10 @@ class Task extends Component {
 
     finishedTasks = (e) => {
      this.props.completedTaskF(this.props.listItem.id);
-      e.target.style.color = 'red'
-
+      e.target.style.color = 'red';
      }
 
     render() {
-
-        
-
         return (
             <div className="container">
                 <div className="row">

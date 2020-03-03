@@ -15,10 +15,7 @@ class App extends Component {
       { content: 'buy travel insurance', completed: false, id: uuidv4() },
       { content: 'train to gatwick @ 5am', completed: false, id: uuidv4() },
       { content: 'don\'t forget passport!', completed: true, id: uuidv4() }
-
     ],
-
-
   }
 
 
